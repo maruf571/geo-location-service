@@ -38,6 +38,13 @@ Sample response
 $ mvn spring-boot:run
 ```
 
+## To run with docker
+```
+mvn clean install 
+docker build -t geoip-service .
+docker run -p 8080:8080 geoip-service 
+```
+
 
 ## How to run test 
 On this project, there are  unit and integration test. Integration test is time consuming test. 
@@ -59,22 +66,11 @@ $ mvn integration-test -DskipTests
 $ mvn verify 
 ```
 
-## To run with docker
-```
-mvn clean install 
-docker build -t geoip-service .
-docker run -p 8080:8080 geoip-service 
-```
 
-## Hit browser 
-For local maven
+## Hit the api  
+
 ```
 http://localhost:8080/
 http://localhost:8080/location?ip=89.27.159.35
 ``` 
 
-For docker
-```
-http://0.0.0.0:8080/
-http://0.0.0.0:8080/location?ip=89.27.159.35
-```
