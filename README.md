@@ -70,7 +70,7 @@ $ mvn verify
 ## Hit the api  
 
 ```
-http://localhost:8080/
-http://localhost:8080/location?ip=89.27.159.35
+GET http://localhost:8080/
+GET http://localhost:8080/location?ip=89.27.159.35
 ``` 
 
