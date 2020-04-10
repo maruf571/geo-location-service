@@ -1,4 +1,4 @@
-# geo-ip service
+# geo-location-service
 As an application developer, often we need to know the client/user location for various reason like
 
 - Embargo compliance
