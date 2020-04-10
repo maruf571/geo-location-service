@@ -4,11 +4,11 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.marufh</groupId>
-	<artifactId>geoip-service</artifactId>
+	<artifactId>geo-location-service</artifactId>
 	<version>1-SNAPSHOT</version>
 
-	<name>geoip-service</name>
-	<description>GEO IP LOOKUP SERVICE </description>
+	<name>geo-location-service</name>
+	<description>geo location finder based on IP</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>

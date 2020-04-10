@@ -51,6 +51,6 @@ http://localhost:8080/location?ip=89.27.159.35
 
 For docker
 ```
-http://0.0.0.0:8080/ping
+http://0.0.0.0:8080/
 http://0.0.0.0:8080/location?ip=89.27.159.35
 ```
