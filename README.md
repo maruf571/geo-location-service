@@ -17,7 +17,7 @@ IP is the easiest solution to track user location(except for vpn users). Maxmind
 
 Sample request 
 ```
-GET http://localhost/location?ip=8.8.8.8
+GET http://localhost/location?ip=89.27.159.35
 ```
 Sample response
 ```
@@ -27,6 +27,17 @@ Sample response
     "countryCode": "DE"
 }
 ```
+
+## Tech spec
+- java 1.8 
+- spring boot 2.*
+- maven
+
+####  To run on the local env
+```
+$ mvn spring-boot:run
+```
+
 
 ## How to run test 
 On this project, there are  unit and integration test. Integration test is time consuming test. 
