@@ -1,6 +1,19 @@
 # geo-ip service
-This project takes an ip as input and return json as output containing location of the ip. To get the
-region from ip,  maxmind database is used. 
+As an application developer, often we need to know the client/user location for various reason like
+
+- Embargo compliance
+- Enforcing digital rights
+- Fraud detection
+- Internet security
+- Language localization
+- Personalizing web content
+- Price localization
+- Routing internet traffic
+- Targeting advertising
+- Web analytics
+
+IP is the easiest solution to track user location(except for vpn users). Maxmind has a free database to get the location based on the ip.
+
 
 Sample request 
 ```
