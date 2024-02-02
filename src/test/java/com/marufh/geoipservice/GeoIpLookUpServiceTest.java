@@ -2,6 +2,7 @@ package com.marufh.geoipservice;
 
 import com.marufh.geoipservice.dto.GeoIp;
 import com.marufh.geoipservice.exception.GeoIpLookUpException;
+import com.marufh.geoipservice.service.GeoIpLookUpService;
 import com.maxmind.geoip2.model.CountryResponse;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

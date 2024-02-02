@@ -5,21 +5,21 @@
 
 	<groupId>com.marufh</groupId>
 	<artifactId>geo-location-service</artifactId>
-	<version>1-SNAPSHOT</version>
+	<version>1.1.0</version>
 
 	<name>geo-location-service</name>
-	<description>geo location finder based on IP</description>
+	<description>Geo location finder based on user IP</description>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
 		<artifactId>spring-boot-starter-parent</artifactId>
-		<version>2.2.6.RELEASE</version>
+		<version>3.1.2</version>
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 
 
 	<properties>
-		<java.version>1.8</java.version>
+		<java.version>17</java.version>
 		<maven.compiler.target>1.8</maven.compiler.target>
 		<maven.compiler.source>1.8</maven.compiler.source>
 		<junit-jupiter.version>5.3.2</junit-jupiter.version>
@@ -35,7 +35,7 @@
 		<dependency>
 			<groupId>com.maxmind.geoip2</groupId>
 			<artifactId>geoip2</artifactId>
-			<version>2.12.0</version>
+			<version>4.0.1</version>
 		</dependency>
 
 		<dependency>
@@ -55,15 +55,7 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
-			<exclusions>
-				<exclusion>
-					<groupId>org.junit.vintage</groupId>
-					<artifactId>junit-vintage-engine</artifactId>
-				</exclusion>
-			</exclusions>
 		</dependency>
-
-
 	</dependencies>
 
 
@@ -89,7 +81,6 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 				<configuration>
-					<fork>true</fork>
 					<executable>true</executable>
 					<profiles>
 						<profile>dev</profile>
@@ -102,57 +93,7 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-surefire-plugin</artifactId>
 				<version>${maven-surefire-plugin.version}</version>
-				<configuration>
-					<skipTests>${skip.surefire.tests}</skipTests>
-					<excludes>
-						<exclude>**/*IT.java</exclude>
-					</excludes>
-				</configuration>
 			</plugin>
-
-			<!-- Integration test runner (*IT.java) -->
-			<plugin>
-				<groupId>org.codehaus.mojo</groupId>
-				<artifactId>build-helper-maven-plugin</artifactId>
-				<version>${build-helper-maven-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>add-test-source</id>
-						<phase>process-resources</phase>
-						<goals>
-							<goal>add-test-source</goal>
-						</goals>
-						<configuration>
-							<sources>
-								<source>src/integration-test/java</source>
-							</sources>
-						</configuration>
-					</execution>
-				</executions>
-			</plugin>
-
-
-			<!-- verify to add integration test -->
-			<plugin>
-				<groupId>org.apache.maven.plugins</groupId>
-				<artifactId>maven-failsafe-plugin</artifactId>
-				<version>${maven-failsafe-plugin.version}</version>
-				<executions>
-					<execution>
-						<id>failsafe-integration-tests</id>
-						<phase>integration-test</phase>
-						<goals>
-							<goal>integration-test</goal>
-							<goal>verify</goal>
-						</goals>
-					</execution>
-				</executions>
-				<configuration>
-					<skipTests>${skip.failsafe.tests}</skipTests>
-					<argLine>${itCoverageAgent}</argLine>
-				</configuration>
-			</plugin>
-
 		</plugins>
 
 		<resources>

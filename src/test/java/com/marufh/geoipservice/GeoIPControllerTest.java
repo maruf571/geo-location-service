@@ -12,36 +12,36 @@ import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
+
 @SpringBootTest
 @AutoConfigureMockMvc
-class GeoIPControllerIT {
+class GeoIPControllerTest {
 
     @Autowired
-    private MockMvc mockMvc;
+    MockMvc mockMvc;
 
     @Test
-    public void should_get_proper_response() throws Exception {
+    void should_get_proper_response() throws Exception {
 
         // Given
         String ip = "89.27.159.35";
 
         // Then
          this.mockMvc.perform(MockMvcRequestBuilders.get(GeoIPController.URL)
-                .contentType(MediaType.APPLICATION_JSON)
-                .param("ip", ip)
-         )
-                .andExpect(status().isOk())
-                .andExpect(jsonPath("$").isNotEmpty())
-                .andExpect(jsonPath("$.continent").value ("EU"))
+                         .contentType(MediaType.APPLICATION_JSON)
+                         .param("ip", ip)
+                 )
+                 .andExpect(status().isOk())
+                 .andExpect(jsonPath("$").isNotEmpty())
+                 .andExpect(jsonPath("$.continent").value ("EU"))
                 .andExpect(jsonPath("$.ipAddress").value ("89.27.159.35"))
                 .andExpect(jsonPath("$.countryCode").value ("DE"))
           ;
-
     }
 
 
     @Test
-    public void should_get_exception() throws Exception {
+    void should_get_exception() throws Exception {
 
         // Given
         String ip = "a.b.c.d";
