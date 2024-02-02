@@ -24,8 +24,8 @@ import java.net.InetAddress;
 public class GeoIpLookUpService {
 
     private static final String GEO_IP_FILE_NAME = "classpath:GeoLite2-Country.mmdb";
-    private static DatabaseReader reader = null;
     private final ResourceLoader resourceLoader;
+    private DatabaseReader reader = null;
 
     @PostConstruct
     public void init() {
