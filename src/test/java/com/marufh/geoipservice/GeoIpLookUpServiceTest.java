@@ -1,4 +1,4 @@
-package com.marufh.geoipservice.service;
+package com.marufh.geoipservice;
 
 import com.marufh.geoipservice.dto.GeoIp;
 import com.marufh.geoipservice.exception.GeoIpLookUpException;
@@ -14,13 +14,13 @@ import org.springframework.boot.test.context.SpringBootTest;
  */
 
 @SpringBootTest
-public class GeoIpLookUpServiceTest {
+class GeoIpLookUpServiceTest {
 
     @Autowired
-    private GeoIpLookUpService geoIpLookUpService;
+    GeoIpLookUpService geoIpLookUpService;
 
     @Test
-    public void should_find_geoLocation_byIp() {
+    void should_find_geoLocation_byIp() {
 
         // when
         CountryResponse countryResponse =  geoIpLookUpService.findGeoLocationByIp("89.27.159.35");
@@ -33,7 +33,7 @@ public class GeoIpLookUpServiceTest {
     }
 
     @Test
-    public void should_throw_geoIp_lookUp_exception_for_ip() {
+    void should_throw_geoIp_lookUp_exception_for_ip() {
         Exception exception = Assertions.assertThrows(
                 GeoIpLookUpException.class, () -> geoIpLookUpService.findGeoLocationByIp("a.b.c.e")
         );

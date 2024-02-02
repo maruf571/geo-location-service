@@ -1,6 +1,6 @@
-package com.marufh.geoipservice.api;
+package com.marufh.geoipservice;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
+import com.marufh.geoipservice.controller.GeoIPController;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
@@ -9,13 +9,12 @@ import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
 import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
 
-
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @SpringBootTest
 @AutoConfigureMockMvc
-public class GeoIPApiIT {
+class GeoIPControllerIT {
 
     @Autowired
     private MockMvc mockMvc;
@@ -27,7 +26,7 @@ public class GeoIPApiIT {
         String ip = "89.27.159.35";
 
         // Then
-         this.mockMvc.perform(MockMvcRequestBuilders.get(GeoIPApi.URL)
+         this.mockMvc.perform(MockMvcRequestBuilders.get(GeoIPController.URL)
                 .contentType(MediaType.APPLICATION_JSON)
                 .param("ip", ip)
          )
@@ -48,7 +47,7 @@ public class GeoIPApiIT {
         String ip = "a.b.c.d";
 
         // Then
-        this.mockMvc.perform(MockMvcRequestBuilders.get(GeoIPApi.URL)
+        this.mockMvc.perform(MockMvcRequestBuilders.get(GeoIPController.URL)
                 .contentType(MediaType.APPLICATION_JSON)
                 .param("ip", ip)
         )

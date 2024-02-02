@@ -1,4 +1,4 @@
-package com.marufh.geoipservice.api;
+package com.marufh.geoipservice.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -10,7 +10,7 @@ import java.util.Map;
 
 @RestController
 @RequestMapping("/")
-public class RootApi {
+public class RootController {
 
     @GetMapping
     public Map<String, String> getRootResponse() {

@@ -1,5 +1,10 @@
 # geo-location-service
-As an application developer, often we need to know the client/user location for various reason like
+[![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=maruf571_geo-location-service&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=maruf571_geo-location-service)
+[![Bugs](https://sonarcloud.io/api/project_badges/measure?project=maruf571_geo-location-service&metric=bugs)](https://sonarcloud.io/summary/new_code?id=maruf571_geo-location-service)
+[![Code Smells](https://sonarcloud.io/api/project_badges/measure?project=maruf571_geo-location-service&metric=code_smells)](https://sonarcloud.io/summary/new_code?id=maruf571_geo-location-service)
+
+
+Often we need to know the client/user location for various reason like
 
 - Embargo compliance
 - Enforcing digital rights

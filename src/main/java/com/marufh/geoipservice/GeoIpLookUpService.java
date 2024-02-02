@@ -1,4 +1,4 @@
-package com.marufh.geoipservice.service;
+package com.marufh.geoipservice;
 
 import com.marufh.geoipservice.exception.GeoIpLookUpException;
 import com.maxmind.db.Reader;
@@ -23,7 +23,7 @@ import java.net.InetAddress;
 @RequiredArgsConstructor
 public class GeoIpLookUpService {
 
-    private static final String geoIpFileName = "GeoLite2-Country.mmdb";
+    private static final String GEO_IP_FILE_NAME = "GeoLite2-Country.mmdb";
     private static DatabaseReader reader = null;
     private final ResourceLoader resourceLoader;
 

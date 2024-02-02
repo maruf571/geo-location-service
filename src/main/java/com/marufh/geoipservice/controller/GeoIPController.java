@@ -1,7 +1,7 @@
-package com.marufh.geoipservice.api;
+package com.marufh.geoipservice.controller;
 
 import com.marufh.geoipservice.dto.GeoIp;
-import com.marufh.geoipservice.service.GeoIpLookUpService;
+import com.marufh.geoipservice.GeoIpLookUpService;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,10 +12,10 @@ import org.springframework.web.bind.annotation.RestController;
 @Slf4j
 @RestController
 @RequiredArgsConstructor
-@RequestMapping(GeoIPApi.URL)
-public class GeoIPApi {
+@RequestMapping(GeoIPController.URL)
+public class GeoIPController {
 
-    static final String URL = "/location";
+    public static final String URL = "/location";
     private final GeoIpLookUpService geoIpLookUpService;
 
     @GetMapping
