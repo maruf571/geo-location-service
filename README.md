@@ -34,8 +34,8 @@ Sample response
 ```
 
 ## Tech spec
-- java 1.8 
-- spring boot 2.*
+- java 17 
+- spring boot 3.*
 - maven
 
 ####  To run on the local env
